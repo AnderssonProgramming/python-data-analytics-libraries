@@ -7,6 +7,11 @@ Demuestra:
 - Guardar figuras como PNG
 """
 
+import os, sys
+
+# --- Agrego la carpeta padre al path para que 'utils/' sea visible ---
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 import matplotlib.pyplot as plt
 import pandas as pd
 from utils.loader import load_data

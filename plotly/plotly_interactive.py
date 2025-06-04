@@ -6,6 +6,11 @@ Demuestra:
 - Gráfico de barras interactivo con dropdown
 """
 
+import os, sys
+
+# --- Agrego la carpeta padre al path para que 'utils/' sea visible ---
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go

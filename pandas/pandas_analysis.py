@@ -9,6 +9,12 @@ Demuestra:
 - Operaciones de series temporales
 """
 
+import os, sys
+
+# --- Agrego la carpeta padre al path para que 'utils/' sea visible ---
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+
 import pandas as pd
 from utils.loader import load_data
 
@@ -38,7 +44,7 @@ def analyze_pandas():
 
     # 5) Operaciones de series temporales: ingresos totales mensuales
     df_ts = df.set_index('Date').sort_index()
-    monthly_revenue = df_ts['Total_Revenue'].resample('M').sum().reset_index()
+    monthly_revenue = df_ts['Total_Revenue'].resample('ME').sum().reset_index()
     print("\n[INFO] Total de ingresos por mes:")
     print(monthly_revenue)
 

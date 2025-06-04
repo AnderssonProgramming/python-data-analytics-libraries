@@ -8,6 +8,12 @@ Demuestra:
 - Predicción de totales de ingreso en función de Units_Sold y Unit_Price
 """
 
+import os, sys
+
+# --- Agrego la carpeta padre al path para que 'utils/' sea visible ---
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
