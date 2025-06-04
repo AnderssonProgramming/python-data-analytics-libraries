@@ -21,7 +21,7 @@ def matplotlib_demo():
 
     # 1) Gráfico de línea: Total_Revenue a lo largo del tiempo
     df_ts = df.set_index('Date').sort_index()
-    monthly_revenue = df_ts['Total_Revenue'].resample('M').sum()
+    monthly_revenue = df_ts['Total_Revenue'].resample('ME').sum()
     plt.figure(figsize=(8, 4))
     plt.plot(monthly_revenue.index, monthly_revenue.values, marker='o', linestyle='-')
     plt.title('Ingreso Mensual Total')

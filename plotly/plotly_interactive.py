@@ -21,7 +21,7 @@ def plotly_demo():
 
     # 1) Gráfico de línea interactivo: Ingreso mensual
     df_ts = df.set_index('Date').sort_index()
-    monthly_revenue = df_ts['Total_Revenue'].resample('M').sum().reset_index()
+    monthly_revenue = df_ts['Total_Revenue'].resample('ME').sum().reset_index()
 
     fig_line = px.line(
         monthly_revenue,
